@@ -76,7 +76,7 @@ plt.title('Distribuição do Peso Após Correção')
 plt.xlabel('Peso')
 plt.ylabel('Frequência')
 plt.show()
-
+![Image](https://github.com/user-attachments/assets/115b5d82-c9a7-4d23-abed-f05c7e1c2848)
 
 
 
@@ -91,7 +91,7 @@ matriz_de_correlação = numeros.corr()
 sns.heatmap(matriz_de_correlação, annot=True, cmap="coolwarm")
 plt.title('Mapa de Calor da Correlação entre Variáveis')
 plt.show()
-
+![Image](https://github.com/user-attachments/assets/d3a75169-c2ab-4ee2-914c-773a48ae218c)
 
 5.3. Relações Categóricas
 Explorei como variáveis categóricas, como OutletType e LocationType, afetam OutletSales:
