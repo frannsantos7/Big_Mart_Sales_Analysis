@@ -43,7 +43,7 @@ Foram feitas verificações para entender as características do DataFrame:
 python
  Verificando os tipos de dados
 print(D_big.dtypes)
-![ Verificando os tipos de dados]C:\Users\frann\Pictures\Screenshots\Dtype)
+![Image](https://github.com/user-attachments/assets/c10ba250-cd31-4ea5-b769-b86c8d537ddf)
 
 
  Identificando valores ausentes
