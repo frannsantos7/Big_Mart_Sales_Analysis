@@ -204,7 +204,7 @@ Como Executar
 Clone o repositório:
 
 
-git clone https://github.com/frannsantos7/Projeto-Big-Mart.git
+git clone https://github.com/frannsantos7/Big_Mart_Sales_Analysis.git
 
 Instale as dependências:
 
