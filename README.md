@@ -1,4 +1,4 @@
-# 🛒 Big Mart Sales Analysis
+# 🛒 Analisando Big Mart Sales
 
 
 ## ✨ Sobre o Projeto
@@ -31,7 +31,9 @@ Abaixo, detalho as etapas realizadas no projeto:
 ### 🖥️ Configuração Inicial
 
 import pandas as pd
+
 import matplotlib.pyplot as plt
+
 import seaborn as sns
 
 
@@ -51,6 +53,7 @@ print(D_big.dtypes)
 
 ## Identificando valores ausentes
 print(D_big.isnull().sum())
+![Image](https://github.com/user-attachments/assets/edc1c546-96e1-4fff-ac79-7ed05f444bea)
 
 ## 4. Tratamento de Valores Ausentes
 Os valores ausentes foram tratados para garantir a consistência dos dados:
@@ -62,10 +65,12 @@ Substituí os valores ausentes na coluna OutletSize pela moda.
 
 ## Tratamento da coluna 'Weight' (numérica)
 weight = D_big['Weight'].mean()
+
 D_big['Weight'] = D_big['Weight'].fillna(weight)
 
 ## Tratamento da coluna 'OutletSize' (categórica)
 mode_outlet_size = D_big['OutletSize'].mode()[0]
+
 D_big['OutletSize'] = D_big['OutletSize'].fillna(mode_outlet_size)
 
 
@@ -74,10 +79,15 @@ D_big['OutletSize'] = D_big['OutletSize'].fillna(mode_outlet_size)
 Verifiquei a distribuição da coluna Weight para entender como os valores estão distribuídos após a substituição pela média:
 
 sns.histplot(D_big['Weight'], kde=True)
+
 plt.title('Distribuição do Peso Após Correção')
+
 plt.xlabel('Peso')
+
 plt.ylabel('Frequência')
+
 plt.show()
+
 ![Distribuição do Peso Após Correção](https://github.com/user-attachments/assets/115b5d82-c9a7-4d23-abed-f05c7e1c2848)
 
 
@@ -86,40 +96,63 @@ plt.show()
 Criei uma matriz de correlação para entender as relações entre as variáveis numéricas, com um destaque para MRP e OutletSales:
 
 numeros = D_big.select_dtypes(include=['float64', 'int64'])
+
 matriz_de_correlação = numeros.corr()
 
-Heatmap da correlação
+## Heatmap da correlação
+
 sns.heatmap(matriz_de_correlação, annot=True, cmap="coolwarm")
+
 plt.title('Mapa de Calor da Correlação entre Variáveis')
+
 plt.show()
+
 ![Mapa de Calor da Correlação entre Variáveis](https://github.com/user-attachments/assets/d3a75169-c2ab-4ee2-914c-773a48ae218c)
 
 ## 5.3. Relações Categóricas
 Explorei como variáveis categóricas, como OutletType e LocationType, afetam OutletSales:
 
 sns.boxplot(x=D_big['OutletType'], y=D_big['OutletSales'])
+
 plt.title('Impacto do Tipo de Outlet nas Vendas')
+
 plt.xlabel('Tipo de Outlet')
+
 plt.ylabel('Vendas')
+
 plt.show()
+
 ![Impacto do Tipo de Outlet nas Vendas](https://github.com/user-attachments/assets/35e1e216-8d8b-4d33-887a-18252254d6e6)
 
 
+
+Explorei como variáveis categóricas, como LocationType e OutletSales:
+
 sns.boxplot(x=D_big['LocationType'], y=D_big['OutletSales'])
+
 plt.title('Impacto da Localização do Outlet nas Vendas')
+
 plt.xlabel('Localização do Outlet')
+
 plt.ylabel('Vendas')
+
 plt.show()
+
 ![Impacto da Localização do Outlet nas Vendas](https://github.com/user-attachments/assets/29c016c5-0714-4a22-8e9f-980e8eaf6bee)
 
 ## 5.4. Análise Temporal
 Verifiquei como o ano de estabelecimento (EstablishmentYear) dos outlets impacta nas vendas:
 
 sns.lineplot(x=D_big['EstablishmentYear'], y=D_big['OutletSales'])
+
 plt.title('Ano de Estabelecimento vs. Vendas')
+
 plt.xlabel('Ano de Estabelecimento')
+
 plt.ylabel('Vendas')
+
 plt.show()
+
 ![Ano de Estabelecimento vs. Vendas](https://github.com/user-attachments/assets/3579fca7-6aa6-47fc-b554-afd1deaf2ccb)
 
 ## 5.5. Outliers
@@ -128,12 +161,17 @@ Identifiquei potenciais outliers nas variáveis numéricas:
 
 sns.boxplot(x=D_big['MRP'])
 plt.title('Boxplot do Preço Máximo de Varejo')
+
 plt.show()
+
 ![Boxplot do Preço Máximo de Varejo](https://github.com/user-attachments/assets/10bfbb45-49b8-4e9b-be81-ca97c603298a)
 
 sns.boxplot(x=D_big['OutletSales'])
+
 plt.title('Boxplot de OutletSales')
+
 plt.show()
+
 ![Boxplot de OutletSales](https://github.com/user-attachments/assets/8faebe97-a0fd-4c01-aaa1-bc69f4f24d3e)
 
 ## 6. Documentação e Insights
@@ -165,10 +203,11 @@ Implementar modelos preditivos básicos para prever OutletSales.
 Como Executar
 Clone o repositório:
 
-bash
-git clone https://github.com/seu-usuario/Projeto-Big-Mart.git
+
+git clone https://github.com/frannsantos7/Projeto-Big-Mart.git
+
 Instale as dependências:
 
-bash
 pip install pandas matplotlib seaborn
+
 Abra o arquivo analysis.ipynb em um ambiente Jupyter Notebook para explorar as análises.
