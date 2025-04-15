@@ -58,9 +58,9 @@ print(D_big.isnull().sum())
 ## 4. Tratamento de Valores Ausentes
 Os valores ausentes foram tratados para garantir a consistência dos dados:
 
-Substituí os valores ausentes na coluna Weight pela média.
+Substituie os valores ausentes na coluna Weight pela média.
 
-Substituí os valores ausentes na coluna OutletSize pela moda.
+Substituie os valores ausentes na coluna OutletSize pela moda.
 
 
 ## Tratamento da coluna 'Weight' (numérica)
@@ -206,8 +206,3 @@ Clone o repositório:
 
 git clone https://github.com/frannsantos7/Big_Mart_Sales_Analysis.git
 
-Instale as dependências:
-
-pip install pandas matplotlib seaborn
-
-Abra o arquivo analysis.ipynb em um ambiente Jupyter Notebook para explorar as análises.
